@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_convertScoreToGradeWithPlusAndMinus
+    </title>
+</head>
+<body>
+    <script>
+        //문제 ) 점수를 입력받아 점수에 해당하는 등급을 리턴해야 합니다.
+        //입력 ) 인자 1 : score (number 타입의 정수)
+        //출력 ) string 타입을 리턴해야 합니다.
+        //        (100 - 90) --> 'A'
+        //        (89 - 80) --> 'B'
+        //        (79 - 70) --> 'C'
+        //        (69 - 60) --> 'D'
+        //       (59 - 0) --> 'F'
+        //만약 주어진 점수가 100을 초과하거나 0 미만이라면 문자열 INVALID SCORE를 리턴해야 합니다.
+        //만약 주어진 점수의 일의 자리가 0~2 사이라면 등급과 함께 '-'를 리턴해야 합니다.
+        //만약 주어진 점수의 일의 자리가 8~9 사이라면 등급과 함께 '+'를 리턴해야 합니다.
+        //F+ 와 F- 는 존재하지 않습니다.
+
+
+        function convertScoreToGradeWithPlusAndMinus(score) {
+            // TODO: 여기에 코드를 작성합니다.
+            let scoreNum10 = Math.floor(score / 10);
+            let scoreNum1 = score % 10;
+            let sign = '';
+            if(scoreNum10 <= 5 && scoreNum10 >= 0)
+                return 'F';
+            else if (scoreNum10 === 6){
+                if(scoreNum1 >= 0 && scoreNum1 <= 2){
+                    sign = '-';
+                } else if (scoreNum1 >= 8 && scoreNum1 <= 9){
+                    sign = '+'
+                }
+                return 'D' + sign;
+            }
+            else if (scoreNum10 === 7) {
+                if(scoreNum1 >= 0 && scoreNum1 <= 2){
+                    sign = '-';
+                } else if (scoreNum1 >= 8 && scoreNum1 <= 9){
+                    sign = '+'
+                }
+                return 'C'+ sign;
+            }
+            else if (scoreNum10 === 8) {
+                if(scoreNum1 >= 0 && scoreNum1 <= 2){
+                    sign = '-';
+                } else if (scoreNum1 >= 8 && scoreNum1 <= 9){
+                    sign = '+'
+                }
+                    return 'B'+ sign;
+            }
+            else if (scoreNum10 === 9){
+                if(scoreNum1 >= 0 && scoreNum1 <= 2){
+                    sign = '-';
+                } else if (scoreNum1 >= 8 && scoreNum1 <= 9){
+                    sign = '+'
+                }
+                    return 'A'+ sign;
+            }
+            else if (score === 100)
+                return 'A+';
+            else 
+                return 'INVALID SCORE';
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
