@@ -6,15 +6,14 @@
 //반복문(for, while) 사용은 금지됩니다.
 //입력받은 배열은 함수의 호출 뒤에도 처음 상태를 유지해야 합니다(immutability).
 //입력으로 들어오는 arr의 모든 요소는 정수 값을 갖는다고 가정합니다.
-//빈 배열의 합은 0 입니다.
-function arrSum(arr) {
+//빈 배열의 곱은 1 입니다.
+function arrProduct(arr) {
   // TODO: 여기에 코드를 작성합니다.
   if(arr.length === 0) {
-    return 0;
+    return 1;
   }
   let head = arr[0];
   let tail = arr.slice(1);
-  return head + arrSum(tail);
+  return head * arrProduct(tail);
 }
-
 
